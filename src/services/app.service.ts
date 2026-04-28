@@ -16,7 +16,6 @@ export const postService = {
   create: (title: string, content: string, userId: number) => 
     db.insert(schema.posts).values({ title, content, userId }).returning(),
   getAll: () => db.query.posts.findMany(),
-  // Requirement: Fetch posts for a specific user 
   getByUser: (userId: number) => 
     db.query.posts.findMany({ where: eq(schema.posts.userId, userId) }),
 };
@@ -25,7 +24,6 @@ export const commentService = {
   create: (text: string, postId: number) => 
     db.insert(schema.comments).values({ text, postId }).returning(),
   getAll: () => db.query.comments.findMany(),
-  // Requirement: Fetch comments for a specific post [cite: 34]
   getByPost: (postId: number) => 
     db.query.comments.findMany({ where: eq(schema.comments.postId, postId) }),
 };
