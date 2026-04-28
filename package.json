@@ -1,0 +1,17 @@
+{
+  "name": "modular-rest-api",
+  "scripts": {
+    "dev": "bun run --hot src/index.ts",
+    "generate": "drizzle-kit generate",
+    "migrate": "drizzle-kit migrate"
+  },
+  "dependencies": {
+    "drizzle-orm": "^0.45.2",
+    "hono": "^4.12.15"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "better-sqlite3": "^12.9.0",
+    "drizzle-kit": "^0.31.10"
+  }
+}
